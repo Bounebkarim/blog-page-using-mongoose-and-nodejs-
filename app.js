@@ -63,7 +63,6 @@ app.post("/compose", function (req, res) {
 
 app.get("/posts/:postName", function (req, res) {
   const requestedTitle = _.lowerCase(req.params.postName);
-  let posts = [];
   Post.find({}, (err, posts) => {
     posts.forEach(function (post) {
       const storedTitle = _.lowerCase(post.title);
